@@ -3,10 +3,11 @@
   <head>
     <style>
     .container {
+      width: 25%;
       display: block;
       position: relative;
       padding-left: 35px;
-      margin-bottom: 12px;
+      margin-bottom: 130px;
       cursor: pointer;
       font-size: 22px;
       height: 100px;
@@ -29,15 +30,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      height: 100px;
-      width: 100px;
-    }
-
-    #one{
-      background-image: url("image1.jpg");
-    }
-    #two{
-      background-image: url("image2.jpg");
+      height: 200px;
+      width: 300px;
     }
 
 
@@ -65,27 +59,58 @@
 
     /* Style the checkmark/indicator */
     .container .checkmark:after {
-      left: 9px;
+      left: 50px;
       top: 5px;
-      width: 20px;
-      height: 40px;
+      width: 50px;
+      height: 100px;
       border: solid white;
-      border-width: 0 10px 10px 0;
+      border-width: 0 20px 20px 0;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
+    }
+    .container .checkmark:before{
+      font-size: 20px;
+      padding: 10px;
+      background-color: black;
+      color: white;
+    }
+
+    .answers{
+      display: flex;
+      flex-wrap:nowrap;
+    }
+
+
+    #one{
+      background-image: url("image1.jpg");
+      background-repeat: no-repeat;
+      background-size:cover;
+    }
+    #two{
+      background-image: url("image2.jpg");
+      background-repeat: no-repeat;
+      background-size:cover;
+    }
+    #one:before{
+      content: 'One';
+    }
+    #two:before{
+      content: 'Two';
     }
     </style>
   </head>
   <body>
     <h1>Custom Checkboxes</h1>
-    <label class="container">One
-      <input type="checkbox" checked="checked">
-      <span class="checkmark" id="one"></span>
-    </label>
-    <label class="container">Two
-      <input type="checkbox" >
-      <span class="checkmark" id="two"></span>
-    </label>
+    <div class="answers">
+      <label class="container">One
+        <input type="checkbox" checked="checked">
+        <span class="checkmark" id="one"></span>
+      </label>
+      <label class="container">Two
+        <input type="checkbox" >
+        <span class="checkmark" id="two"></span>
+      </label>
+    </div>
   </body>
 </html>
